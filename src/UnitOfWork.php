@@ -307,7 +307,10 @@ class UnitOfWork
     {
         $id = $this->entityIds[$oid];
         $entity = $this->entitiesById[$id];
-        $this->entityStateReferences[$id] = clone $entity;
+        
+        if(!isset($this->entityStateReferences[$id]) {
+            $this->entityStateReferences[$id] = clone $entity;
+        }
     }
 
     public function detectEntityChanges()
